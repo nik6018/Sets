@@ -126,7 +126,7 @@ class GridView: UIView {
         numberOfCardsThatCanBeAddedToView = 3
     }
     
-    // pass any use info during initialization
+    // pass any useful info during initialization
     convenience init(grid: UIView){
         self.init()
         
@@ -138,7 +138,6 @@ class GridView: UIView {
         
         self.contentView = grid
         let layout = Grid.Layout.dimensions(rowCount: rowCount, columnCount: columnCount)
-        print("the Layout: \(rowCount * columnCount)")
         gridLayoutFrame = Grid(layout: layout, frame: contentView.bounds)
     }
     

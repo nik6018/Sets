@@ -275,7 +275,7 @@ class SetGameViewController: UIViewController, UIDynamicAnimatorDelegate {
             })
             
             if flag == 1 {
-                //FIX_THIS : A TEMP Hack
+                //TODO : A TEMP Hack
                 self.renderCards(renderState.dealCards)
             } else {
                 self.animateDealCards(cardsToAnimate)
