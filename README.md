@@ -33,7 +33,7 @@ A Set consists of three cards satisfying all of these conditions:
 
 The game ends when no Sets can be found in the playing cards.
 
-## Technical Details
+## Under the Hood Details
 
 ### Core Graphics
 
@@ -78,9 +78,13 @@ While drawing the stripped pattern <code>UIGraphicsGetCurrentContext</code> is u
  
  If the game is finished or you wish to start a new game, pressing the restart button causes the cards to experience gravity and fall down from their original position
  
- All the cards in the game act as an UIDynamicItem to all the above behaviours, but items themselves can have behaviours applied to them using
- 
  5. <b>UIDynamicItemBehaviour</b>
  
+ All the cards in the game act as an UIDynamicItem to all the above behaviours, but items themselves can have behaviours applied to them using.
  
+ The cards have elasticity for gaining energy when they collide with each other so they don't stop moving in the content area.
  
+ <hr>
+ 
+ #### Videos
+ Since the animations are all dynamic in nature I have made videos which are present in the images/ folder which show all the UIKitDynamic Animations.
