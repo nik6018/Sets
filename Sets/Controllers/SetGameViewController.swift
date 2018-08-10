@@ -372,7 +372,7 @@ extension SetGameViewController {
     }
     
     private var nonSetColor: UIColor {
-        return UIColor.initializeTheColor(_red: 125, _green: 0, _blue: 0)
+        return UIColor.initializeTheColor(_red: 235, _green: 0, _blue: 0)
     }
     
     private func toggleDealButton() {

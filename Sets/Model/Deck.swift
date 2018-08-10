@@ -55,12 +55,13 @@ class Deck {
     }
      
     func isSet(_ selectedCards: [Int]) -> Bool {
-        if selectedCards.count == 3 {
-            return true
-        } else {
-            return false
-        }
-        
+		// Uncommented the below lines for cheat mode
+//        if selectedCards.count == 3 {
+//            return true
+//        } else {
+//            return false
+//        }
+		
         guard selectedCards.count == 3 else {
             print("in guard else")
             return false
