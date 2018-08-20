@@ -160,38 +160,25 @@ class SetView: UIView {
         roundedRect.fill()
     }
     
-    private func drawStrippedRect(inRect rect: CGRect) {
-        
-        // TODO: Refactor
+	private func drawStrippedRect(inRect rect: CGRect) {
+		
         let lineWidth = self.lineWidth
         
         let stripePath = UIBezierPath()
         stripePath.lineWidth = lineWidth
-        stripePath.move(to: CGPoint(x: bounds.midX, y: bounds.minY))
-        stripePath.addLine(to: CGPoint(x: bounds.midX, y: bounds.maxY))
-        
-        var midPoint = bounds.midX
-        let lineSpacing: CGFloat = lineWidth + 1.0
-        
-        while midPoint > bounds.minX {
-            let nextPoint = midPoint - lineWidth - lineSpacing
-            stripePath.lineWidth = lineWidth
-            stripePath.move(to: CGPoint(x: nextPoint, y: bounds.minY) )
-            stripePath.addLine(to: CGPoint(x: nextPoint, y: bounds.height))
-            midPoint -= (lineWidth + lineSpacing)
-        }
-        
-        
-        var midPoint1 = bounds.midX
-        
-        while midPoint1 < bounds.maxX {
-            let nextPoint = midPoint1 + lineWidth + lineSpacing
-            stripePath.lineWidth = lineWidth
-            stripePath.move(to: CGPoint(x: nextPoint, y: bounds.minY) )
-            stripePath.addLine(to: CGPoint(x: nextPoint, y: bounds.height))
-            midPoint1 += (lineWidth + lineSpacing)
-        }
-        
+		let lineSpacing: CGFloat = lineWidth + 1
+		
+		var startPoint = rect.minX
+		startPoint += (1.75 * lineWidth)
+		let endPoint = rect.maxX
+		
+		while startPoint < endPoint {
+			stripePath.move(to: CGPoint(x: startPoint, y: rect.minY))
+			stripePath.addLine(to: CGPoint(x: startPoint, y: rect.maxY))
+			// move the stripe line across the X axis
+			startPoint += (lineWidth + lineSpacing)
+		}
+		
         shapeColor.setStroke()
         stripePath.stroke()
     }
